@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres       # Создаст пользователя postgres
+      POSTGRES_PASSWORD: 4464        # Пароль для пользователя postgres
+      POSTGRES_DB: secton_db         # Имя базы данных
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
